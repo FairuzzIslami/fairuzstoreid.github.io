@@ -313,7 +313,7 @@
       <form
         action="#"
         class="mx-auto mb-0 mt-8 max-w-md space-y-4 mx-8"
-        onsubmit="sendMessageToWhatsapp()"
+        onsubmit="kirimPesanKeWhatsapp()"
       >
         <input
           type="text"
@@ -321,7 +321,9 @@
           placeholder="masukan nama anda"
           id="nama"
         />
-        <textarea  placeholder="ketik pesan anda..."  rows="8"
+        <textarea  placeholder="ketik pesan anda..."
+          id="pesan"  
+          rows="8"
           class="w-full rounded-lg border border-gray-300 p-4 pe-12 text-sm shadow-sm"></textarea>
         <button
           type="submit"
@@ -349,4 +351,11 @@
       </div>
     </footer>
     <!-- end Footer -->
+
+    <script>
+    function kirimPesanKeWhatsapp(){
+    const linkToWhastapp = `https://wa.me/625799690454?text= hallo saya ${nama.value} dan pesan saya tentang toko anda, ${pesan.value}` 
+    window.open(linkToWhastapp,"_blank")
+    }
+    </script>
 </html>
